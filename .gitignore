@@ -1,0 +1,18 @@
+# Python Virtual Environment
+venv/
+__pycache__/
+*.pyc
+*.log
+
+# Streamlit / Jupyter
+.streamlit/
+.ipynb_checkpoints
+
+# AI/Data Artifacts
+*.pkl # 학습된 모델 파일
+*.csv # 중간/최종 결과 CSV 파일 (깃허브에 올릴 필요 없음)
+
+# TypeScript / Node.js
+04_Frontend/ts_component/frontend/node_modules/
+04_Frontend/ts_component/frontend/dist/
+3. Git에 파일 추가
