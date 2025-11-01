@@ -83,7 +83,7 @@ PostgreSQL 서버가 실행 중인 상태에서 순서대로 실행합니다.
 기술 통합: Python과 TypeScript가 Streamlit을 통해 상호 작용하며, AI 백엔드 결과가 UI에 실시간으로 반영되는 풀 스택 시뮬레이션 구현.
 
 # 필수 Python 라이브러리 설치
-pip install -r requirements.txt
+pip install -r requirements.txt<br />
 pip install sqlalchemy psycopg2-binary pyyaml streamlit plotly
 
 ## 6. 🚀 향후 확장 계획 (Future Work)
