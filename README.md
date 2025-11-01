@@ -49,7 +49,7 @@
 
 프로젝트 루트 폴더(`AI_WebLoad_Prediction_System`)에서 실행합니다.
 
-```bash
+
 # 가상 환경 활성화 (Windows 기준)
 .\venv\Scripts\activate
 
