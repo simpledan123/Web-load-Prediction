@@ -13,29 +13,29 @@
 
 이 프로젝트는 **Layered Architecture (계층형 아키텍처)**와 **MSA(Microservices Architecture)**의 초기 모델을 따르고 있습니다.
 
-```mermaid
+
 graph TD
     User[User Client] -->|React Frontend| FE[Web Dashboard]
     FE -->|REST API| API[FastAPI Backend]
     
     subgraph "Core Service Layer"
         API -->|ORM| DB[(PostgreSQL)]
-        API -->|Prediction Request| AI[AI Engine (Prophet)]
+        API -->|Prediction Request| AI["AI Engine (Prophet)"]
     end
     
     subgraph "Physical AI Operations"
         DB -->|CDC Stream| Kafka[Kafka / Spark]
-        AI -->|Control Signal| Infra[AWS Auto Scaling / HVAC Control]
+        AI -->|Control Signal| Infra["AWS Auto Scaling / HVAC Control"]
     end
 
-기술 스택
-Frontend,"React, Vite, Chart.js"
-Backend,Python FastAPI
-Database,PostgreSQL
-Data Ops,Alembic
-AI Model,Prophet
+## 기술 스택  
+Frontend,"React, Vite, Chart.js"  
+Backend,Python FastAPI  
+Database,PostgreSQL  
+Data Ops,Alembic  
+AI Model,Prophet  
 
-주요 기능 (Key Features)
+## 주요 기능 (Key Features)
 1. 🏃‍♂️ 사용자 모드 (Community & Workout)
 기능: 사용자는 운동 기록을 저장하고, 커뮤니티 피드에 글을 작성하여 공유할 수 있습니다.
 
@@ -50,16 +50,16 @@ Physical AI 제어 로직:
 
 물리 제어: "서버 부하 감소 -> CPU 언더클럭킹 및 냉각 팬 속도 저하 -> 전력 절감"
 
-실행
-# 레포지토리 클론
+## 실행
+## 레포지토리 클론
 git clone [https://github.com/simpledan123/Web-load-Prediction.git](https://github.com/simpledan123/Web-load-Prediction.git)
 cd Web-load-Prediction
 
-# 가상환경 생성 및 활성화
+## 가상환경 생성 및 활성화
 conda create -n de_project python=3.10
 conda activate de_project
 
-# 백엔드 패키지 설치
+## 백엔드 패키지 설치
 pip install -r requirements.txt
 
 # 로컬 PostgreSQL에 DB 및 유저 생성 필요 (user_health / health_db)
@@ -74,7 +74,7 @@ npm install
 npm run dev
 # 웹 접속: http://localhost:5173
 
-추후 개발 방향
+## 추후 개발 방향
 Real-time Pipeline: Kafka를 도입하여 DB의 변경 사항(CDC)을 실시간 스트리밍으로 AI 모델에 전달.
 
 Auto Scaling 연동: 현재 시뮬레이션된 제어 로직을 AWS Boto3 또는 Kubernetes HPA와 실제로 연동.
